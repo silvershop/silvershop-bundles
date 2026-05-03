@@ -1,0 +1,15 @@
+---
+Name: silvershop-bundles
+After: silvershop-core
+---
+SilverShop\Admin\ProductCatalogAdmin:
+  managed_models:
+    - SilverShop\Bundles\Page\BundleProduct
+
+SilverShop\Model\OrderItem:
+  extensions:
+    - SilverShop\Bundles\Extensions\BundleProductOrderItemExtension
+
+SilverShop\Model\Order:
+  extensions:
+    - SilverShop\Bundles\Extensions\BundleOrderExtension

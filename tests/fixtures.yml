@@ -1,0 +1,26 @@
+SilverShop\Page\ProductCategory:
+  cat:
+    Title: Catalog
+
+SilverShop\Page\Product:
+  component_a:
+    Title: Component A
+    Parent: =>SilverShop\Page\ProductCategory.cat
+    BasePrice: 10.00
+  component_b:
+    Title: Component B
+    Parent: =>SilverShop\Page\ProductCategory.cat
+    BasePrice: 5.00
+
+SilverShop\Bundles\Page\BundleProduct:
+  bundle:
+    Title: Test Bundle
+    Parent: =>SilverShop\Page\ProductCategory.cat
+    BasePrice: 12.00
+    BundledProducts:
+      - =>SilverShop\Page\Product.component_a
+      - =>SilverShop\Page\Product.component_b
+
+SilverShop\Stock\Model\ProductWarehouse:
+  warehouse:
+    Title: Main

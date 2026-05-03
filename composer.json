@@ -1,0 +1,65 @@
+{
+  "name": "silvershop/bundles",
+  "description": "Bundle products for SilverShop: sell a product that groups other products and adjusts component stock on purchase.",
+  "license": "BSD-3-Clause",
+  "type": "silverstripe-vendormodule",
+  "homepage": "https://github.com/silvershop/silvershop-bundles",
+  "authors": [
+    {
+      "name": "SilverShop Contributors",
+      "homepage": "https://github.com/silvershop/silvershop-core/graphs/contributors"
+    }
+  ],
+  "keywords": [
+    "silverstripe",
+    "shop",
+    "ecommerce",
+    "bundle",
+    "silvershop"
+  ],
+  "require": {
+    "silvershop/core": "^6",
+    "php-http/guzzle7-adapter": "^1.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.3",
+    "silverstripe/sqlite3": "^4.0",
+    "squizlabs/php_codesniffer": "^3.0",
+    "cambis/silverstan": "dev-main",
+    "silvershop/stock": "^6"
+  },
+  "suggest": {
+    "silvershop/stock": "Warehouse stock is decremented for bundled products when this module calls decrementStock / incrementStock."
+  },
+  "scripts": {
+    "lint": "phpcs src/ tests/ --extensions=php",
+    "phpstan": "phpstan analyse -c phpstan.neon.dist --memory-limit=2G",
+    "test": "./vendor/bin/phpunit",
+    "syntax-check": "find src/ tests/ -type f -name '*.php' -exec php -l {} \\;",
+    "lint-clean": "phpcbf src/ tests/ --extensions=php"
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "extra": {
+    "branch-alias": {
+      "dev-main": "1.x-dev"
+    },
+    "expose": [
+      "javascript",
+      "images"
+    ]
+  },
+  "autoload": {
+    "psr-4": {
+      "SilverShop\\Bundles\\": "src/",
+      "SilverShop\\Bundles\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "silverstripe/vendor-plugin": true,
+      "php-http/discovery": true
+    }
+  }
+}
