@@ -20,10 +20,7 @@ use SilverStripe\Security\Member;
  */
 class BundleProduct extends Product
 {
-    /**
-     * Same physical table as {@link Product}; subclass is distinguished by `ClassName`.
-     */
-    private static string $table_name = 'SilverShop_Product';
+    private static string $table_name = 'SilverShop_BundleProduct';
 
     private static array $many_many = [
         'BundledProducts' => Product::class,
